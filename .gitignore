@@ -10,3 +10,9 @@ local_mysql_data/
 .claude/
 .agents/
 supabase/.temp/
+01_Frontend/node_modules/
+01_Frontend/legacy_seed/
+server/mysql-data/
+02_API_Gateway/server_legacy/mysql-data/
+__pycache__/
+*.pyc

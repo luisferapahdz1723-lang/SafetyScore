@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "vite --root 01_Frontend --config 01_Frontend/vite.config.ts --port=3000 --host=0.0.0.0",
+    "build": "vite build --root 01_Frontend --config 01_Frontend/vite.config.ts",
+    "preview": "vite preview --root 01_Frontend --config 01_Frontend/vite.config.ts",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit",
-    "server": "node server/index.js"
+    "lint": "tsc --noEmit -p 01_Frontend/tsconfig.json",
+    "server": "python -m uvicorn backend.main:app --app-dir 02_API_Gateway --host 0.0.0.0 --port 8000 --reload",
+    "server:legacy": "node 02_API_Gateway/server_legacy/index.js"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

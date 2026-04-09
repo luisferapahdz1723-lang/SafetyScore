@@ -1,0 +1,19 @@
+sequenceDiagram
+    actor P as Dueno PYME
+    participant FE as Frontend
+    participant API as FastAPI
+    participant IA as Motor IA
+    participant DB as MySQL
+
+    P->>FE: Completa wizard de negocio
+    FE->>API: POST /api/businesses
+    API->>DB: Guarda negocio
+    FE->>API: POST /api/crowdfunding/requests
+    API->>IA: Evalua riesgo y viabilidad
+    IA-->>API: Dictamen + score
+    API->>DB: Guarda solicitud
+    API-->>FE: Solicitud creada
+    P->>FE: Consulta estado/progreso
+    FE->>API: GET /api/crowdfunding/requests/me
+    API->>DB: Lee solicitudes propias
+    API-->>FE: Lista de solicitudes

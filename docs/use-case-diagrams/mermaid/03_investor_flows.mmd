@@ -1,0 +1,11 @@
+flowchart LR
+    I[Inversionista] --> M[Marketplace]
+    M --> F[Filtros: sector, ROI, score]
+    F --> O[Oportunidades]
+    O --> D[Detalle oportunidad]
+    D --> X[Invertir]
+    X --> API[FastAPI]
+    API --> TX[Transaccion]
+    TX --> DB[(MySQL)]
+    DB --> U[Actualiza funded_amount y estado]
+    U --> P[Portafolio inversionista]

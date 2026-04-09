@@ -1,0 +1,9 @@
+flowchart TD
+    PYME[Dueno de PYME] --> FRONT[Frontend React]
+    INVESTOR[Inversionista] --> FRONT
+    ADMIN[Administrador] --> FRONT
+    FRONT --> API[FastAPI Backend]
+    API --> DB[(MySQL)]
+    API --> AI[Motor IA SafetyScore]
+    API --> NESSIE[Nessie API]
+    API --> NOTIF[Sistema de Notificaciones]
