@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "Outfit", sans-serif;
+  
+  --color-brand-blue: #00355F;
+  --color-brand-red: #D22E1E;
+  --color-brand-emerald: #10B981;
+  --color-brand-amber: #F59E0B;
+
+  --color-surface: var(--bg);
+  --color-surface-alt: var(--bg-alt);
+  --color-content: var(--text);
+  --color-content-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-border: var(--border);
+}
+
+:root {
+  /* Default: Capital One Light Theme */
+  --bg: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --text: #00355F; /* Capital One Deep Blue Text */
+  --text-muted: #475569;
+  --primary: #D22E1E; /* Capital One Red */
+  --primary-hover: #B22517;
+  --border: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+[data-theme="investor"] {
+  /* Investor Theme now uses the unified Capital One Light Branding */
+  --bg: #F8FAFC;
+  --bg-alt: #FFFFFF;
+  --text: #00355F; /* Capital One Deep Blue Text */
+  --text-muted: #475569;
+  --primary: #00355F; /* Capital One Deep Blue */
+  --primary-hover: #002240;
+  --border: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 8px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+  }
+  
+  .glass-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    @apply rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    @apply font-bold py-3 px-6 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+
+  .btn-secondary {
+    @apply bg-brand-red hover:bg-brand-red/90 text-white font-bold py-3 px-6 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+    @apply font-bold py-3 px-6 rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800;
+  }
+
+  .input-field {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    @apply rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all placeholder:text-slate-400;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes counter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-counter {
+  animation: counter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
