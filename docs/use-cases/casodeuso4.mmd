@@ -1,0 +1,8 @@
+flowchart TD
+    IN[Datos de negocio y solicitud] --> PRE[Normalizacion de datos]
+    PRE --> RULES[Reglas de riesgo]
+    RULES --> SCORE[Calculo de SafetyScore]
+    SCORE --> VERDICT[Dictamen IA]
+    VERDICT --> API[FastAPI]
+    API --> DB[(MySQL)]
+    DB --> OUT[Respuesta a frontend]

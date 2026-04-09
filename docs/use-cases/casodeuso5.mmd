@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor U as Usuario
+    participant FE as Frontend
+    participant API as FastAPI
+    participant SEC as JWT/Auth
+    participant DB as MySQL
+
+    U->>FE: Login
+    FE->>API: POST /api/auth/signin
+    API->>DB: Valida usuario
+    API->>SEC: Genera JWT
+    API-->>FE: Session + token
+    FE->>API: Requests autenticados (Bearer)
+    API->>SEC: Verifica token
+    API->>DB: Lee/escribe datos
+    API-->>FE: Respuesta

@@ -110,12 +110,12 @@ Los assets compilados se generan con Vite usando la configuración en `01_Fronte
 
 ## Casos de uso Mermaid (vista rápida)
 
-- Índice general: `docs/use-case-diagrams/README.md`
-- Diagramas Mermaid puros (`.mmd`): `docs/use-case-diagrams/mermaid/README.md`
-- Arquitectura general: `docs/use-case-diagrams/mermaid/01_general_overview.mmd`
-- Flujos PyME: `docs/use-case-diagrams/mermaid/02_pyme_flows.mmd`
-- Flujos inversionista: `docs/use-case-diagrams/mermaid/03_investor_flows.mmd`
-- Motor IA: `docs/use-case-diagrams/mermaid/04_ai_engine_flows.mmd`
-- Auth y datos: `docs/use-case-diagrams/mermaid/05_authentication_and_data.mmd`
-- Viaje E2E: `docs/use-case-diagrams/mermaid/06_end_to_end_journey.mmd`
+- Índice general: `00_Use_Cases/README.md`
+- Diagramas Mermaid puros (`.mmd`): `00_Use_Cases/mermaid/README.md`
+- Arquitectura general: `00_Use_Cases/mermaid/01_general_overview.mmd`
+- Flujos PyME: `00_Use_Cases/mermaid/02_pyme_flows.mmd`
+- Flujos inversionista: `00_Use_Cases/mermaid/03_investor_flows.mmd`
+- Motor IA: `00_Use_Cases/mermaid/04_ai_engine_flows.mmd`
+- Auth y datos: `00_Use_Cases/mermaid/05_authentication_and_data.mmd`
+- Viaje E2E: `00_Use_Cases/mermaid/06_end_to_end_journey.mmd`
 
