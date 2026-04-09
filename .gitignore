@@ -10,5 +10,3 @@ local_mysql_data/
 .claude/
 .agents/
 supabase/.temp/
-*.zip
-*.pdf
